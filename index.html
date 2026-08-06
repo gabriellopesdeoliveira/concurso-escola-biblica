@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UEFA Champions Style UI</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="champion-background">
+<section class="ranking-section">
+    <audio id="bgMusic" loop>
+        <source src="tema.mp3" type="audio/mpeg">
+    </audio>
+    <img src="logo.png" alt="Logo" />
+
+    <span class="ui-subtitle">
+        Concurso
+    </span>
+
+    <h1 class="hero-title">
+        Ranking Geral
+    </h1>
+
+    <div class="card-glass ranking-card">
+
+        <table class="ranking-table">
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Aluno</th>
+                    <th>Presença</th>
+                    <th>Pontualidade</th>
+                    <th>Visitante</th>
+                    <th>DoeDay</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+
+            <tbody id="ranking-body"></tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<script src="ranking.mock.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,320 @@
+/* ==========================================================================
+   1. RESET & BASE VARIABLES
+   ========================================================================== */
+:root {
+  /* Color Palette */
+  --bg-midnight: #060B1E;
+  --bg-surface: #0F1A3A;
+  --accent-cyan: #00D2FF;
+  --accent-blue-hover: #0088FF;
+  --accent-gold: #09f7ff;
+  --text-primary: #FFFFFF;
+  --text-secondary: #d6d9dd;
+
+  /* Fonts */
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   2. BACKGROUND & LAYOUT
+   ========================================================================== */
+.champion-background {
+  background-color: var(--bg-midnight);
+  background-image: radial-gradient(
+    circle at 50% 15%,
+    #0B1F4F 0%,
+    var(--bg-midnight) 75%
+  );
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   3. NAVBAR
+   ========================================================================== */
+.navbar-glass {
+  background: rgba(15, 26, 58, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.1em;
+}
+
+.logo span {
+  color: var(--accent-cyan);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   4. TYPOGRAPHY & HERO SECTION
+   ========================================================================== */
+.ranking-section {
+  padding: 100px 24px 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ui-subtitle {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-cyan);
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  max-width: 640px;
+  font-size: 1.125rem;
+  margin-bottom: 36px;
+}
+
+.action-group {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 80px;
+}
+
+/* ==========================================================================
+   5. BUTTONS
+   ========================================================================== */
+.btn-primary {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--bg-midnight);
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue-hover) 100%);
+  border: none;
+  border-radius: 6px;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+}
+
+.btn-secondary {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  border-radius: 6px;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 210, 255, 0.1);
+  border-color: var(--accent-cyan);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   6. CARDS & COMPONENTS
+   ========================================================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.card-glass {
+  background: rgba(15, 26, 58, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: left;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.card-glass:hover {
+  border-color: rgba(0, 210, 255, 0.4);
+  transform: translateY(-4px);
+}
+
+.electric-glow {
+  box-shadow: 0 0 25px rgba(0, 210, 255, 0.25);
+  border-color: rgba(0, 210, 255, 0.3);
+}
+
+.card-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-cyan);
+  background: rgba(0, 210, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.card-badge.gold {
+  color: var(--accent-gold);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-text {
+  font-size: 0.938rem;
+  margin-bottom: 20px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: var(--accent-cyan);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.card-link:hover {
+  opacity: 0.8;
+}
+
+/** CSS ADICIONAL TABELA **/
+.ranking-card{
+    width:100%;
+    overflow-x:auto;
+}
+
+.ranking-table{
+    width:100%;
+    border-collapse:collapse;
+    color:var(--text-primary);
+    font-family:var(--font-body);
+}
+
+.ranking-table thead{
+    background:rgba(0,210,255,.08);
+}
+
+.ranking-table th{
+    padding:18px;
+    text-transform:uppercase;
+    font-size:.85rem;
+    letter-spacing:.08em;
+    color:var(--accent-cyan);
+}
+
+.ranking-table td{
+    padding:18px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:var(--text-secondary);
+}
+
+.ranking-table tbody tr{
+    transition:.25s;
+}
+
+.ranking-table tbody tr:hover{
+    background:rgba(0,210,255,.05);
+}
+
+.ranking-table td:first-child{
+    font-weight:bold;
+    color:var(--accent-gold);
+}
+
+.total{
+    color:var(--text-primary);
+    font-weight:700;
+}
+
+.ranking-table tbody tr:first-child td:first-child{
+    font-size:1.2rem;
+}
