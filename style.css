@@ -205,7 +205,6 @@ body {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  padding: 32px 24px;
   text-align: left;
   transition: all 0.3s ease;
   position: relative;
@@ -229,7 +228,6 @@ body {
   letter-spacing: 0.1em;
   color: var(--accent-cyan);
   background: rgba(0, 210, 255, 0.1);
-  padding: 4px 10px;
   border-radius: 4px;
   margin-bottom: 16px;
 }
@@ -286,17 +284,19 @@ body {
 }
 
 .ranking-table th{
-    padding:18px;
+    padding:8px;
     text-transform:uppercase;
-    font-size:.85rem;
+    font-size: 14px;
     letter-spacing:.08em;
     color:var(--accent-cyan);
+    text-align: center;
 }
 
 .ranking-table td{
-    padding:18px;
+    padding:8px;
     border-top:1px solid rgba(255,255,255,.08);
     color:var(--text-secondary);
+    text-align: center;
 }
 
 .ranking-table tbody tr{
@@ -312,13 +312,19 @@ body {
     color:var(--accent-gold);
 }
 
+/* Somente a coluna de nomes permanece alinhada à esquerda. */
+.ranking-table th:nth-child(2),
+.ranking-table td:nth-child(2){
+    text-align:left;
+}
+
 .total{
     color:var(--text-primary);
     font-weight:700;
 }
 
 .ranking-table tbody tr:first-child td:first-child{
-    font-size:1.2rem;
+    font-size:12px;
 }
 
 /* Mobile: mantém a identificação do aluno visível enquanto os pontos rolam. */
@@ -347,6 +353,8 @@ body {
     .ranking-card {
         padding: 0;
         border-radius: 10px;
+        max-height: min(62vh, 520px);
+        overflow: auto;
     }
 
     .ranking-table {
@@ -361,8 +369,11 @@ body {
     }
 
     .ranking-table th {
+        position: sticky;
+        top: 0;
         font-size: .67rem;
         letter-spacing: .045em;
+        z-index: 3;
     }
 
     .ranking-table th:first-child,
@@ -374,6 +385,12 @@ body {
         min-width: 42px;
         text-align: center;
         background: #0f1a3a;
+    }
+
+    .ranking-table th:first-child {
+        top: 0;
+        z-index: 5;
+        background: #102043;
     }
 
     .ranking-table th:nth-child(2),
@@ -388,15 +405,22 @@ body {
         text-align: left;
         background: #0f1a3a;
         box-shadow: 8px 0 12px -12px rgba(0, 210, 255, .9);
+        text-align: left;
+    }
+
+    .ranking-table th:nth-child(2) {
+        top: 0;
+        z-index: 5;
+        background: #102043;
     }
 
     .ranking-table thead th {
-        z-index: 3;
         background: #102043;
     }
 
     .ranking-table tbody tr:hover td:first-child,
     .ranking-table tbody tr:hover td:nth-child(2) {
         background: #11244a;
+
     }
 }
