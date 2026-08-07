@@ -270,6 +270,8 @@ body {
 .ranking-card{
     width:100%;
     overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-color:rgba(0, 210, 255, .5) transparent;
 }
 
 .ranking-table{
@@ -317,4 +319,84 @@ body {
 
 .ranking-table tbody tr:first-child td:first-child{
     font-size:1.2rem;
+}
+
+/* Mobile: mantém a identificação do aluno visível enquanto os pontos rolam. */
+@media (max-width: 640px) {
+    .ranking-section {
+        padding: 52px 12px 28px;
+    }
+
+    .ranking-section > img {
+        width: min(150px, 48vw);
+        height: auto;
+    }
+
+    .ui-subtitle {
+        font-size: .72rem;
+        letter-spacing: .14em;
+        margin-bottom: 6px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.65rem, 9vw, 2.2rem);
+        letter-spacing: .05em;
+        margin-bottom: 16px;
+    }
+
+    .ranking-card {
+        padding: 0;
+        border-radius: 10px;
+    }
+
+    .ranking-table {
+        min-width: 650px;
+        font-size: .82rem;
+    }
+
+    .ranking-table th,
+    .ranking-table td {
+        padding: 13px 12px;
+        white-space: nowrap;
+    }
+
+    .ranking-table th {
+        font-size: .67rem;
+        letter-spacing: .045em;
+    }
+
+    .ranking-table th:first-child,
+    .ranking-table td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        width: 42px;
+        min-width: 42px;
+        text-align: center;
+        background: #0f1a3a;
+    }
+
+    .ranking-table th:nth-child(2),
+    .ranking-table td:nth-child(2) {
+        position: sticky;
+        left: 42px;
+        z-index: 2;
+        min-width: 142px;
+        max-width: 142px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+        background: #0f1a3a;
+        box-shadow: 8px 0 12px -12px rgba(0, 210, 255, .9);
+    }
+
+    .ranking-table thead th {
+        z-index: 3;
+        background: #102043;
+    }
+
+    .ranking-table tbody tr:hover td:first-child,
+    .ranking-table tbody tr:hover td:nth-child(2) {
+        background: #11244a;
+    }
 }
