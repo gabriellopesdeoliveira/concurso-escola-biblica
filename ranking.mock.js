@@ -32,7 +32,7 @@ const ranking = [
     "pontualidade": 0 + 0,
     "presenca": 1+1,
     "visitante": 0,
-    "doeDay": 0
+    "doeDay": 1
   },
   {
     "aluno": "Felipe Cauê",
