@@ -149,7 +149,7 @@ const ranking = [
   {
     "aluno": "Pedro Augusto Portugal",
     "pontualidade": 0 + 0 + 0,
-    "presenca": 0 + 1 + 0
+    "presenca": 0 + 1 + 0,
     "visitante": 0,
     "doeDay": 0
   },
